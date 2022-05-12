@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('backend.home.index');
-});
+// Route::get('/dashboard', function () {
+//     return view('backend.home.index');
+// });
+
+Route::get('/dashboard',[App\Http\Controllers\Backend\Home\HomeController::class,'index'])->name('dashboard.index');
 
 Auth::routes();
 
