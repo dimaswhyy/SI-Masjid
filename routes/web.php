@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\DataPengurus\PengurusController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,34 +24,54 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/finventaris',function(){
-    return view('backend.finventaris.index');
+Route::get('/inventaris/create',function(){
+    return view('backend.form_inventaris.index');
 });
 
-Route::get('/fdatapengurus',function(){
-    return view('backend.fdatapengurus.index');
+// Route::get('/datapengurus/create',function(){
+//     return view('backend.form_datapengurus.index');
+// });
+
+Route::get('/dokumentasi/create',function(){
+    return view('backend.form_dokumentasi.index');
 });
 
-Route::get('/fdokumentasi',function(){
-    return view('backend.fdokumentasi.index');
+Route::get('/masukkas/create',function(){
+    return view('backend.form_masukkas.index');
 });
 
-Route::get('/fmasukkas',function(){
-    return view('backend.fmasukkas.index');
+Route::get('/keluarkas/create',function(){
+    return view('backend.form_keluarkas.index');
 });
 
-Route::get('/fkeluarkas',function(){
-    return view('backend.fkeluarkas.index');
+Route::get('/profilmasjid/edit',function(){
+    return view('backend.form_profilmasjid.index');
 });
 
-Route::get('/fprofilmasjid',function(){
-    return view('backend.fprofilmasjid.index');
+Route::get('/profilmasjid',function(){
+    return view('backend.view_profilmasjid.index');
 });
 
-Route::get('/vprofilmasjid',function(){
-    return view('backend.vprofilmasjid.index');
+// Route::get('/datapengurus',function(){
+//     return view('backend.datatable_datapengurus.index');
+// });
+
+Route::get('/inventaris',function(){
+    return view('backend.datatable_inventaris.index');
 });
 
-Route::get('/vtdatapengurus',function(){
-    return view('backend.vtdatapengurus.index');
+Route::get('/dokumentasi',function(){
+    return view('backend.datatable_dokumentasi.index');
+});
+
+Route::get('/',function(){
+    return view('frontend.mainmenu.index');
+});
+
+//Route Resource Controller
+Route::resource('/datapengurus', PengurusController::class);
+
+//Rout Edit Controller
+Route::get('/datapengurus/edit',function(){
+    return view('backend.edit_datapengurus.index');
 });

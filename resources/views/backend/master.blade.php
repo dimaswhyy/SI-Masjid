@@ -13,7 +13,9 @@
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="{{ asset('assets/backend/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/backend/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/backend/vendors/ti-icons/css/themify-icons.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/backend/vendors/mdi/css/materialdesignicons.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/js/select.dataTables.min.css') }}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
@@ -55,7 +57,15 @@
   <script src="{{ asset('assets/backend/vendors/datatables.net/jquery.dataTables.js') }}"></script>
   <script src="{{ asset('assets/backend/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
   <script src="{{ asset('assets/backend/js/dataTables.select.min.js') }}"></script>
-  <script src={{ asset('assets/backend/vendors/ckeditor/ckeditor.js') }}></script>
+  <script src="{{ asset('assets/backend/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+  <script>
+     $(".datepicker").datepicker({
+         format: 'dd-mm-yyyy',
+         autoclose: true,
+         todayHighlight: true,
+     });
+    </script>
+  <script src="{{ asset('assets/backend/vendors/ckeditor/ckeditor.js') }}"></script>
   <script>
     CKEDITOR.replace( 'visi' );
     CKEDITOR.replace( 'misi' );
